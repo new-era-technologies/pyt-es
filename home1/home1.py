@@ -14,26 +14,16 @@ class Book:
         self.genre = genre
         self.review_list = []
 
-    def append(self, el):
+    def append(self, el: str):
         self.review_list.append(el)
 
-    def getReviewList(self):
-        return self.review_list
-
     def __str__(self):
-        return f"Book: {self.name} \nGenre: {self.genre} \nAuthor: {self.author} \nPublish year: {self.year_publ} \nReview: {self.getReviewList()}"
-
-    # def __repr__(self):
-    #     return f"Book: {self.name} \nGenre: {self.genre} \nAuthor: {self.author} \nPublish year: {self.year_publ} \nReview: {self.getReviewList()}"
+        return f"Book: {self.name} \nGenre: {self.genre} \nAuthor: {self.author} \nPublish year: {self.year_publ} \nReview: {self.review_list}"
 
 
 book1 = Book("Abraham 'Bram' Stoker ", "Dracula", 1897, "horror")
 book2 = Book("Margaret Eleanor Atwood", "The Handmaids Tale", 1985, "dystopian novel")
 book3 = Book("Victor-Marie Hugo", "Les Miserables", 1862, "love and romance")
-
-# print(book1.__str__())
-# print(book2.__str__())
-# print(book3.__str__())
 
 
 # Завдання 2
