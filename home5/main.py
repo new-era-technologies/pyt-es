@@ -26,6 +26,9 @@ class Contact:
     def send_message(self):
         pass
 
+    def __repr__(self):
+        return f"{self.surname} {self.name} {self.age} {self.mob_phone} {self.email}"
+
 
 class UpdateContact(Contact):
 
@@ -35,6 +38,9 @@ class UpdateContact(Contact):
 
     def get_message(self):
         pass
+
+    def __repr__(self):
+        return f"{self.surname} {self.name} {self.age} {self.mob_phone} {self.email} {self.job}"
 
 
 contact1 = Contact("Bot", "Botov", 999, 12345, "bot@email")
@@ -89,9 +95,22 @@ print(issubclass(UpdateContact, Contact))
 
 
 # Завдання 5
+# Використовуючи код завдання 2 надрукуйте у терміналі інформацію,
+# яка міститься у класах Contact та UpdateContact та їх екземплярах.
+# Видаліть атрибут job, і знову надрукуйте стан класів та їх екземплярів.
+# Порівняйте їх. Зробіть відповідні висновки.
 
-# Використовуючи код завдання 2 надрукуйте у терміналі інформацію, яка міститься у класах Contact та UpdateContact та їх екземплярах. Видаліть атрибут job, і знову надрукуйте стан класів та їх екземплярів. Порівняйте їх. Зробіть відповідні висновки.
+
+print(repr(contact1))
+print(repr(updateContact1))
+delattr(UpdateContact, "job")
+print(repr(updateContact1))
+
 
 # Завдання 6
+# Використовуючи код завдання 2 надрукуйте у терміналі всі методи,
+# які містяться у класі Contact та UpdateContact.
 
-# Використовуючи код завдання 2 надрукуйте у терміналі всі методи, які містяться у класі Contact та UpdateContact.
+
+print(dir(contact1))
+print(dir(updateContact1))
