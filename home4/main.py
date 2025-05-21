@@ -1,7 +1,7 @@
 # Завдання 1
 # Вивчіть основні стандартні винятки, які перераховані в цьому уроці.
 
-# print(dir(locals()["__builtins__"]))
+print(dir(locals()["__builtins__"]))
 
 # Завдання 2
 # Напишіть програму-калькулятор, яка підтримує такі операції: додавання, віднімання, множення,
@@ -81,3 +81,66 @@ while True:
 # Дані зберігати у словниках.
 # Також передбачити пошук по прізвищу тренера, яке вводиться з клавіатури у відповідному пункті меню.
 # Якщо ключ не буде знайдений, створити відповідний клас-Exception, який буде викликатися в обробнику виключень.
+
+sports = {
+    "first": "sport1",
+    "second": "sport2",
+    "third": "sport3",
+    "forth": "sport4",
+    "fifth": "sport5",
+}
+
+trainers = {
+    "trainer1": "trainer1",
+    "trainer2": "trainer2",
+    "trainer3": "trainer3",
+    "trainer4": "trainer4",
+    "trainer5": "trainer5",
+}
+
+trainings = {"training1", "training2", "training3", "training4", "training5"}
+
+prices = {"price1", "price2", "price3", "price4", "price5"}
+
+
+menu = int(
+    input(
+        "1 - перелік видів спорту, 2 - команда тренерів, 3 - розклад тренувань, 4 - вартість тренування "
+    )
+)
+
+
+def show_values(x):
+
+    for key, value in enumerate(x):
+        print(value)
+
+
+def get_menu(x):
+    match (x):
+        case 1:
+            show_values(sports)
+        case 2:
+            show_values(trainers)
+        case 3:
+            show_values(trainings)
+        case 4:
+            show_values(prices)
+
+
+def find_trainer(t, ts):
+
+    try:
+        value = ts[t]
+        print(value)
+    except KeyError:
+        print("Такого тренера немає")
+
+
+try:
+    get_menu(menu)
+except Exception as e:
+    print(e)
+
+trainer = input("Пошук по прізвищу тренера ")
+find_trainer(trainer, trainers)
