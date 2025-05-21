@@ -72,8 +72,21 @@ print(getattr(updateContact1, "mob_phone"))
 
 
 # Завдання 4
+# Використовуючи код з завдання 2, створити 2 екземпляри обох класів.
+# Використати функції isinstance() – для перевірки екземплярів класу (за яким класом створені)
+# та issubclass() – для перевірки і визначення класу-нащадка.
 
-# Використовуючи код з завдання 2, створити 2 екземпляри обох класів. Використати функції isinstance() – для перевірки екземплярів класу (за яким класом створені) та issubclass() – для перевірки і визначення класу-нащадка.
+
+print(isinstance(contact1, Contact))
+print(isinstance(contact1, UpdateContact))
+print(isinstance(updateContact1, Contact))
+print(isinstance(updateContact1, UpdateContact))
+print(isinstance(contact1.email, str))
+print(isinstance(updateContact1.age, str))
+
+print(issubclass(Contact, UpdateContact))
+print(issubclass(UpdateContact, Contact))
+
 
 # Завдання 5
 
