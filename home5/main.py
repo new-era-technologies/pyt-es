@@ -50,8 +50,26 @@ print(UpdateContact.__bases__)
 
 
 # Завдання 3
+# Використовуючи код з завдання 2, використати функції hasattr(), getattr(), setattr(), delattr().
+# Застосувати ці функції до кожного з атрибутів класів, подивитися до чого це призводить.
 
-# Використовуючи код з завдання 2, використати функції hasattr(), getattr(), setattr(), delattr(). Застосувати ці функції до кожного з атрибутів класів, подивитися до чого це призводить.
+
+print(hasattr(updateContact1, "name"))
+print(hasattr(contact1, "job"))
+
+print(getattr(contact1, "surname"))
+print(getattr(updateContact1, "surname"))
+
+setattr(updateContact1, "weekdays", "sunday")
+print(hasattr(updateContact1, "weekdays"))
+print(hasattr(contact1, "weekdays"))
+
+delattr(contact1, "mob_phone")
+print(hasattr(contact1, "mob_phone"))
+print(hasattr(updateContact1, "mob_phone"))
+print(getattr(contact1, "mob_phone"))
+print(getattr(updateContact1, "mob_phone"))
+
 
 # Завдання 4
 
